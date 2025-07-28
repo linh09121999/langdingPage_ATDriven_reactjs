@@ -169,6 +169,36 @@
     fill: var(--color-indigo-600);
 }
 
+.menu-icon {
+    font-size: 1.8rem;
+}
+
+/* back to top */
+.back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background: var(--gradiant);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+
+.back-to-top:hover {
+    transform: translateY(-3px);
+}
+
 @supports (overflow: clip) {
     .supports-\[overflow\:clip\]\:overflow-clip {
         overflow: clip;
@@ -178,5 +208,11 @@
 @media (width >=64rem) {
     .lg\:max-w-none {
         max-width: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-links li {
+        margin-left: 20px;
     }
 }

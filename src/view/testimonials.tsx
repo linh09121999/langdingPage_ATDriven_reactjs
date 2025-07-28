@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Testimonials: React.FC = () => {
-    const { testimonialsContent, refs, pages, offset, setSelectNav } = useGlobal();
+    const { testimonialsContent, refs } = useGlobal();
 
     useEffect(() => {
         AOS.init({

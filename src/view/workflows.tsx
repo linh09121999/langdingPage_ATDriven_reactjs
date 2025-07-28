@@ -7,7 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Workflows: React.FC = () => {
-    const { workflowsContent, refs, pages, offset, setSelectNav } = useGlobal();
+    const { workflowsContent, refs} = useGlobal();
 
     useEffect(() => {
         AOS.init({

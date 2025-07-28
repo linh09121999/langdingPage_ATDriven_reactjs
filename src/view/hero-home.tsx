@@ -6,7 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const HeroHome: React.FC = () => {
-    const { hero, refs, pages, offset, setSelectNav } = useGlobal();
+    const { hero, refs} = useGlobal();
 
     useEffect(() => {
         AOS.init({

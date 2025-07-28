@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Features: React.FC = () => {
-    const { featuresContent, refs, pages, offset, setSelectNav } = useGlobal();
+    const { featuresContent, refs } = useGlobal();
 
     useEffect(() => {
         AOS.init({

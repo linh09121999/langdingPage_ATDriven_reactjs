@@ -5,7 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Cta: React.FC = () => {
-    const { ctaContent, refs, pages, offset, setSelectNav } = useGlobal();
+    const { ctaContent, refs } = useGlobal();
 
     useEffect(() => {
         AOS.init({

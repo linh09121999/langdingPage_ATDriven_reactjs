@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useRef, useEffect } from "react";
 import type { JSX, ReactNode } from "react";
+import { useMediaQuery } from "@mui/material"
 
 import imgLogo from "../assets/images/logo.svg"
 import imgFooter from "../assets/images/footer-illustration.svg"
@@ -43,36 +44,54 @@ import ClientImg09 from "../assets/images/client-logo-09.svg";
 import {
     FaGithub,
     FaMedium,
-    FaPlayCircle
+    FaPlayCircle,
+    FaHome,
+    FaMailBulk,
+    FaAngleDoubleUp
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { GrFormNextLink } from "react-icons/gr";
+import { CgMenu } from "react-icons/cg";
+import {
+    TbPackages,
+    TbMessageCircleStar
+} from "react-icons/tb";
+import {
+    IoShieldCheckmark,
+    IoClose
+} from "react-icons/io5";
 
 export interface Page {
     id: string;
     title: string;
+    icon: JSX.Element
 }
 
 const defaultPages: Page[] = [
     {
         id: "home",
-        title: "Home"
+        title: "Home",
+        icon: <FaHome />
     },
     {
         id: "product",
-        title: "Products"
+        title: "Products",
+        icon: <TbPackages />
     },
     {
         id: "feature",
-        title: "Features"
+        title: "Features",
+        icon: <IoShieldCheckmark />
     },
     {
         id: "testimontial",
-        title: "Testimonials"
+        title: "Testimonials",
+        icon: <TbMessageCircleStar />
     },
     {
         id: "contact",
-        title: "Contact"
+        title: "Contact",
+        icon: <FaMailBulk />
     },
 ];
 
@@ -555,13 +574,6 @@ const defaultCTA: CTA[] = [
     }
 ]
 
-// export type SectionKey =
-//     | "home"
-//     | "product"
-//     | "feature"
-//     | "testimontial"
-//     | "contact";
-
 export interface GlobalState {
     pages: Page[];
     currentPage: string;
@@ -579,7 +591,11 @@ export interface GlobalState {
     selectNav: number;
     setSelectNav: (index: number) => void;
     scrollTo: (id: string) => void;
-    offset: number
+    offset: number;
+    isMobile: boolean;
+    iconMenu: JSX.Element;
+    iconClose: JSX.Element;
+    iconBackToTop: JSX.Element
 }
 
 
@@ -635,35 +651,11 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
         };
     }, [refs]);
 
-    // useEffect(() => {
-    //     const observer = new IntersectionObserver(
-    //         (entries) => {
-    //             for (let entry of entries) {
-    //                 if (entry.isIntersecting) {
-    //                     const index = defaultPages.findIndex((p) => p.id === entry.target.id);
-    //                     if (index !== -1) {
-    //                         setSelectNav(index);
-    //                     }
-    //                     break;
-    //                 }
-    //             }
-    //         },
-    //         {
-    //             threshold: 0.6, // phần lớn section phải xuất hiện mới active
-    //         }
-    //     );
+    const isMobile = useMediaQuery("(max-width:768px)");
 
-    //     // Observe từng section
-    //     defaultPages.forEach((page) => {
-    //         const el = refs[page.id]?.current;
-    //         if (el) observer.observe(el);
-    //     });
-
-    //     return () => {
-    //         observer.disconnect();
-    //     };
-    // }, [refs]);
-
+    const iconMenu = <CgMenu />
+    const iconClose = <IoClose />
+    const iconBackToTop = <FaAngleDoubleUp />
 
     const value = {
         pages: defaultPages,
@@ -682,7 +674,11 @@ export const GlobalProvider = ({ children }: { children: ReactNode }) => {
         setSelectNav,
         refs,
         scrollTo,
-        offset
+        offset,
+        isMobile,
+        iconMenu,
+        iconClose,
+        iconBackToTop,
     }
 
     return (
