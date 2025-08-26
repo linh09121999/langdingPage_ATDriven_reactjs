@@ -1,6 +1,5 @@
 import React from 'react';
 import { useGlobal } from '../context/GlobalContext'
-import type { SectionKey } from "../context/GlobalContext";
 
 const Nav: React.FC = () => {
     const { pages, setSelectNav, selectNav, scrollTo } = useGlobal()
