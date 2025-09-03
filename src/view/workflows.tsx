@@ -1,5 +1,5 @@
 import type React from "react";
-import { useEffect, useState, useRef } from "react";
+import { useEffect } from "react";
 import { useGlobal } from '../context/GlobalContext';
 import Spotlight from "./spotlight";
 

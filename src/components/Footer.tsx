@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
                             </div>
                         ))}
                         {footer.conpany.map((conpany, id1) => (
-                            <div className="space-y-2">
+                            <div className="space-y-2" key={id1}>
                                 <h3 className="text-sm font-medium text-gray-200">{conpany.name}</h3>
                                 <ul className="space-y-2 text-sm">
                                     {conpany.content.map((content, id2) => (
@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                             </div>
                         ))}
                         {footer.resources.map((resources, id1) => (
-                            <div className="space-y-2">
+                            <div className="space-y-2" key={id1}>
                                 <h3 className="text-sm font-medium text-gray-200">{resources.name}</h3>
                                 <ul className="space-y-2 text-sm">
                                     {resources.content.map((content, id2) => (
@@ -107,7 +107,7 @@ const Footer: React.FC = () => {
                                 </p>
                                 <ul className="inline-flex gap-1">
                                     {footer.social.map((social, id) => (
-                                        <li>
+                                        <li key={id}>
                                             <a
                                                 className="flex items-center justify-center text-indigo-500 transition hover:text-indigo-400"
                                                 href="#0"

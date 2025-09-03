@@ -1,5 +1,5 @@
 import type React from "react";
-import { useEffect, useState, useRef } from "react";
+import { useEffect} from "react";
 import { useGlobal } from '../context/GlobalContext';
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -64,7 +64,7 @@ const Features: React.FC = () => {
                             </div>
                             <div className="mx-auto grid max-w-sm gap-12 sm:max-w-none sm:grid-cols-2 md:gap-x-14 md:gap-y-16 lg:grid-cols-3">
                                 {feature.content.map((content, id1) => (
-                                    <article key={id}>
+                                    <article key={id1}>
                                         <svg
                                             className="mb-3 fill-indigo-500"
                                             xmlns="http://www.w3.org/2000/svg"

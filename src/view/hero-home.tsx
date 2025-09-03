@@ -1,5 +1,5 @@
 import type React from "react";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { useGlobal } from '../context/GlobalContext';
 import { Dialog, DialogContent } from "@mui/material";
 import AOS from "aos";

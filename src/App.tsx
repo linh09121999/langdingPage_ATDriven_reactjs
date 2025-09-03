@@ -1,5 +1,5 @@
-import React, { Suspense, useEffect } from 'react';
-import { HashRouter, Route, Routes, Navigate, Outlet, BrowserRouter } from 'react-router-dom';
+import React, { Suspense} from 'react';
+import {Route, Routes, Navigate, Outlet, BrowserRouter } from 'react-router-dom';
 import '../src/assets/css/index.css'
 import { Footer, Header } from './components';
 import { BackToTop, ScrollProgress } from './action';

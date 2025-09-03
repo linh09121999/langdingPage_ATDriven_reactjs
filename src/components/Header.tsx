@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef } from 'react';
+import React, { useState } from 'react';
 import Nav from './Nav'
 import {
     Box,
@@ -106,7 +106,7 @@ const Header: React.FC = () => {
                                     <List>
                                         {pages.map((page, index) => (
                                             <ListItem
-                                                button
+                                                component="button"
                                                 key={index}
                                                 onClick={() => {
                                                     setSelectNav(index)
